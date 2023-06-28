@@ -1,12 +1,4 @@
 <template>
-  <!--
-      This example requires updating your template:
-  
-      ```
-      <html class="h-full bg-gray-100">
-      <body class="h-full">
-      ```
-    -->
   <div class="min-h-full">
     <Disclosure as="nav" class="bg-Secondary" v-slot="{ open }">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -22,6 +14,7 @@
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <router-link
+                  class=" no-underline"
                   v-for="item in navigation"
                   :key="item.name"
                   :to="item.goto"

@@ -1,7 +1,7 @@
 <template>
   <div>
     <component
-      :is="target"
+      :is="data.target"
       :data="data"
       :error="error"
       :value="modelValue"
@@ -17,6 +17,6 @@ export default {
   components: {
     ...input,
   },
-  props: ["target", "data", "error", "modelValue"],
+  props: ["data", "error", "modelValue"],
 };
 </script>

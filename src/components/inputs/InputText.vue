@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col justify-between p-2">
       <label
-        class=" text-base flex justify-between items-center font-normal text-Neutral"
+        class="text-base flex justify-between items-center font-normal text-Neutral"
         :for="data.name"
       >
         {{ data.label }}
@@ -15,7 +15,7 @@
         :value="value"
         :placeholder="data.placeholder"
         @input="emit('action', $event.target.value)"
-        class=" rounded-xl text-base block w-full border-0 bg-Primary py-3 px-6 font-normal leading-none text-Accent file:border file:border-solid focus:ring-0"
+        class="rounded-xl text-base block w-full border-0 bg-Primary py-3 px-6 font-normal leading-none text-Accent file:border file:border-solid focus:ring-0"
       >
     </div>
   </template>

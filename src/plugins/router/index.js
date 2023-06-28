@@ -11,14 +11,14 @@ let routes = [
     component: () => import("@pages/Home.vue"),
   },
   {
+    path: "/services/:view?",
+    name: "Services",
+    component: () => import("@pages/Services.vue"),
+  },
+  {
     path: "/contact",
     name: "Contact",
     component: () => import("@pages/Contact.vue"),
-  },
-  {
-    path: "/input",
-    name: "Input",
-    component: () => import("@pages/Input.vue"),
   },
   {
     path: "/waiting",

@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
+@layer components {
+    h1 {
+        @apply text-Primary text-4xl font-semibold
+    }
+    h2 {
+        @apply text-Primary text-3xl font-semibold
+    }
+    h3 {
+        @apply text-Primary text-2xl font-semibold
+    }
+    h4 {
+        @apply text-Primary text-xl font-semibold
+    }
+    h5 {
+        @apply text-Primary text-base font-semibold
+    }
+    h6 {
+        @apply text-Primary text-sm font-semibold
+    }
+    p {
+        @apply text-Primary text-base font-normal
+    }
+    a {
+        @apply text-Primary text-base font-normal
+    }
+}
 @tailwind utilities;
+@layer utilities {
+    body::-webkit-scrollbar {
+      width: 10px; /* width of the entire scrollbar */
+    }
+  
+    body::-webkit-scrollbar-track {
+      background: #4169E1; /* color of the tracking area */
+    }
+  
+    body::-webkit-scrollbar-thumb {
+      background-color: #FFD700; /* color of the scroll thumb */
+      border-radius: 20px; /* roundness of the scroll thumb */
+      border: 3px solid #8A2BE2;
+    }
+  }

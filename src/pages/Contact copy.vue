@@ -1,12 +1,12 @@
 <template>
   <div class="relative isolate mt-16">
-    <div class="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
+    <div class=" max-w-7xl flex items-center">
       <div
-        class="relative px-6 pb-10 pt-12 sm:pt-16 lg:static lg:px-8 lg:py-24"
+        class="lg:static mx-auto"
       >
-        <div class="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+        <div class="relative mx-auto px-6 pb-10 pt-12 sm:pt-16 lg:px-8 lg:py-24 max-w-xl lg:mx-0 lg:max-w-lg">
           <div
-            class="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden rounded-xl ring-1 ring-Neutral/20 lg:w-1/2"
+            class="absolute inset-y-0 left-0 right-0 -z-10 w-full overflow-hidden ring-1 ring-Neutral/20 rounded-xl lg:w-full"
           >
             <svg
               class="absolute inset-0 h-full w-full stroke-Neutral/40 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -63,23 +63,23 @@
               />
             </div>
           </div>
-          <h2 class="text-3xl font-bold tracking-tight">Contactez-moi</h2>
-          <p class="mt-6 text-lg leading-8">
-            Je serais ravi de vous aider avec votre projet. N'hésitez pas à me
-            contacter pour toute question, demande de renseignements, devis ou
-            prise de rendez-vous. Je suis disponible et prêt à répondre à toutes
-            vos interrogations.
+          <h2 class="text-3xl font-bold tracking-tight">
+            Contactez-moi
+          </h2>
+          <p class="mt-6 text-lg leading-8 lg:w-[90%]">
+            Je serais ravi de vous aider avec votre projet. N'hésitez pas à me contacter pour toute question, demande de renseignements, devis ou prise de rendez-vous. Je suis disponible et prêt à répondre à toutes vos interrogations.
           </p>
-          <p class="mt-6 text-lg leading-8">
-            Mon objectif est de travailler avec vous et de concrétiser votre
-            projet selon vos souhaits. Je suis impatient de collaborer ensemble
-            et de faire de votre idée une réalité.
+          <p class="mt-6 text-lg leading-8 lg:w-[90%]">
+            Mon objectif est de travailler avec vous et de concrétiser votre projet selon vos souhaits. Je suis impatient de collaborer ensemble et de faire de votre idée une réalité.
           </p>
           <dl class="mt-10 space-y-4 text-base leading-7 text-Primary">
             <div class="flex gap-x-4">
               <dt class="flex-none">
                 <span class="sr-only">Address</span>
-                <BuildingOffice2Icon class="h-7 w-6" aria-hidden="true" />
+                <BuildingOffice2Icon
+                  class="h-7 w-6"
+                  aria-hidden="true"
+                />
               </dt>
               <dd>646, chemin de Cabrol<br />06580 Pegomas</dd>
             </div>
@@ -97,7 +97,10 @@
             <div class="flex gap-x-4">
               <dt class="flex-none">
                 <span class="sr-only">Email</span>
-                <EnvelopeIcon class="h-7 w-6" aria-hidden="true" />
+                <EnvelopeIcon
+                  class="h-7 w-6"
+                  aria-hidden="true"
+                />
               </dt>
               <dd>
                 <a class="hover:text-Neutral" href="mailto:adp@cegetel.net"
@@ -108,7 +111,7 @@
           </dl>
         </div>
       </div>
-      <form
+      <!-- <form
         action="#"
         method="POST"
         class="px-6 pb-12 pt-10 sm:pb-16 lg:px-8 lg:py-24"
@@ -125,7 +128,6 @@
                 <input
                   type="text"
                   name="first-name"
-                  v-model="firstName"
                   id="first-name"
                   autocomplete="given-name"
                   class="block w-full rounded-md border-0 bg-Secondary/20 px-3.5 py-2 text-Primary shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-Neutral sm:text-sm sm:leading-6"
@@ -142,7 +144,6 @@
                 <input
                   type="text"
                   name="last-name"
-                  v-model="lastName"
                   id="last-name"
                   autocomplete="family-name"
                   class="block w-full rounded-md border-0 bg-Secondary/20 px-3.5 py-2 text-Primary shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-Neutral sm:text-sm sm:leading-6"
@@ -158,7 +159,6 @@
               <div class="mt-2.5">
                 <input
                   type="email"
-                  v-model="email"
                   name="email"
                   id="email"
                   autocomplete="email"
@@ -176,7 +176,6 @@
                 <input
                   type="tel"
                   name="phone-number"
-                  v-model="tel"
                   id="phone-number"
                   autocomplete="tel"
                   class="block w-full rounded-md border-0 bg-Secondary/20 px-3.5 py-2 text-Primary shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-Neutral sm:text-sm sm:leading-6"
@@ -193,7 +192,6 @@
                 <textarea
                   name="message"
                   id="message"
-                  v-model="message"
                   rows="4"
                   class="block w-full rounded-md border-0 bg-Secondary/20 px-3.5 py-2 text-Primary shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-Neutral sm:text-sm sm:leading-6"
                 />
@@ -202,74 +200,24 @@
           </div>
           <div class="mt-8 flex justify-end">
             <button
-              @click.prevent="pushMail()"
+              type="submit"
               class="rounded-md bg-Primary px-3.5 py-2.5 text-center text-sm font-semibold text-Secondary shadow-sm hover:bg-Neutral focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-Neutral"
             >
               Send message
             </button>
           </div>
         </div>
-      </form>
+      </form> -->
     </div>
   </div>
 </template>
 
 <script setup>
-import emailjs from "emailjs-com";
-import { ref, onMounted } from "vue";
-
 import {
   BuildingOffice2Icon,
   EnvelopeIcon,
   PhoneIcon,
 } from "@heroicons/vue/24/outline";
-
-const lastName = ref("");
-const firstName = ref("");
-const email = ref("");
-const tel = ref("");
-const message = ref("");
-
-function pushMail() {
-  emailjs
-    .send(
-      import.meta.env.VITE_YOUR_SERVICE_ID,
-      import.meta.env.VITE_YOUR_TEMPLATE_ID,
-      {
-        from_lastName: lastName.value,
-        from_firstName: firstName.value,
-        from_email: email.value,
-        from_tel: tel.value,
-        message: message.value,
-      },
-    )
-    .then((response) => {
-      console.log(
-        "Le message a été envoyé avec succès !",
-        response.status,
-        response.text,
-      );
-      // Affichez un message de succès à l'utilisateur ou effectuez toute autre action nécessaire
-
-      // Réinitialisez le formulaire après l'envoi
-      lastName.value = "";
-      firstName.value = "";
-      email.value = "";
-      tel.value = "";
-      message.value = "";
-    })
-    .catch((error) => {
-      console.error(
-        "Une erreur s'est produite lors de l'envoi du message.",
-        error,
-      );
-      // Gérez les erreurs d'envoi du formulaire
-    });
-}
-
-onMounted(async () => {
-  emailjs.init(import.meta.env.VITE_YOUR_USER_ID);
-});
 </script>
 
 <style lang="scss" scoped></style>
