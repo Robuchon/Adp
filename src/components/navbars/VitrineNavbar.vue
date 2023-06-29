@@ -8,61 +8,58 @@
           as="nav"
           class="mx-auto flex justify-center space-x-2 lg:space-x-8 xl:basis-1/2"
         >
-          <div class="flex w-24">
-            <router-link
-              to="/home"
-              class="my-auto block w-full rounded-md px-3 py-2 text-center text-base font-medium"
-              :class="
-                '/home' === router.currentRoute.value.path
-                  ? 'text-Neutral'
-                  : 'text-Primary hover:bg-Secondary hover:text-Neutral'
-              "
-            >
-              Home
-            </router-link>
-          </div>
-          <Popover class="flex w-24" @mouseleave="opendropdown = false">
-            <PopoverButton @mouseover="opendropdown = true">
-              <p
-                class="my-auto block w-full rounded-md px-3 py-2 text-center text-base font-medium hover:bg-Secondary"
+          <div v-for="item in navigation">
+            <div v-if="item.dataNav === undefined" class="flex w-24">
+              <router-link
+                :to="item.goto"
+                class="my-auto block w-full rounded-md px-3 py-2 text-center text-base font-medium"
                 :class="
-                  'Services' === router.currentRoute.value.name
+                  item.goto === router.currentRoute.value.path
                     ? 'text-Neutral'
-                    : 'text-Primary hover:text-Neutral'
+                    : 'text-Primary hover:bg-Secondary hover:text-Neutral'
                 "
               >
-                Services
-              </p>
-            </PopoverButton>
-            <transition
-              enter-active-class="transition ease-out duration-200"
-              enter-from-class="translate-y-5 opacity-0"
-              enter-to-class="opacity-100 translate-y-0 translate-x-0"
-              leave-active-class="transition ease-in duration-150"
-              leave-from-class="opacity-100 translate-y-0 translate-x-0"
-              leave-to-class="translate-y-5 opacity-0"
+                {{ item.name }}
+              </router-link>
+            </div>
+            <Popover
+              v-else
+              class="flex w-24"
+              @mouseleave="opendropdown = false"
             >
-              <PopoverPanel v-if="opendropdown" class="absolute mt-10 -ml-2 z-20" static>
-                <DropDown
-                  class=""
-                  :dataNav="dataNav"
-                  @action="opendropdown = false"
-                ></DropDown>
-              </PopoverPanel>
-            </transition>
-          </Popover>
-          <div class="flex w-24">
-            <router-link
-              to="/contact"
-              class="my-auto block w-full rounded-md px-3 py-2 text-center text-base font-medium"
-              :class="
-                '/contact' === router.currentRoute.value.path
-                  ? 'text-Neutral'
-                  : 'text-Primary hover:bg-Secondary hover:text-Neutral'
-              "
-            >
-              Contact
-            </router-link>
+              <PopoverButton @mouseover="opendropdown = true">
+                <p
+                  class="my-auto block w-full rounded-md px-3 py-2 text-center text-base font-medium hover:bg-Secondary"
+                  :class="
+                    'Services' === router.currentRoute.value.name
+                      ? 'text-Neutral'
+                      : 'text-Primary hover:text-Neutral'
+                  "
+                >
+                  Services
+                </p>
+              </PopoverButton>
+              <transition
+                enter-active-class="transition ease-out duration-200"
+                enter-from-class="translate-y-5 opacity-0"
+                enter-to-class="opacity-100 translate-y-0 translate-x-0"
+                leave-active-class="transition ease-in duration-150"
+                leave-from-class="opacity-100 translate-y-0 translate-x-0"
+                leave-to-class="translate-y-5 opacity-0"
+              >
+                <PopoverPanel
+                  v-if="opendropdown"
+                  class="absolute z-20 mt-10 -ml-2"
+                  static
+                >
+                  <DropDown
+                    class=""
+                    :dataNav="item.dataNav"
+                    @action="opendropdown = false"
+                  ></DropDown>
+                </PopoverPanel>
+              </transition>
+            </Popover>
           </div>
         </PopoverGroup>
         <!-- Mobile menu button -->
@@ -87,12 +84,6 @@ import DropDown from "./vitrineComponents/DropDown.vue";
 
 const props = defineProps(["navigation"]);
 const opendropdown = ref(false);
-const dataNav = ref([
-  { name: "Covering", goto: "Services", param: "covering" },
-  { name: "Adhesif", goto: "Services", param: "adhesif" },
-  { name: "Transfert", goto: "Services", param: "transfert" },
-  { name: "ect", goto: "Services", param: "ect" },
-]);
 </script>
 
 <style lang="scss" scoped></style>
