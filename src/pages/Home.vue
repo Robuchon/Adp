@@ -39,14 +39,21 @@
       <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           class="lg:aspect-auto aspect-[3/2] object-cover lg:h-full lg:w-full"
-          src="/img/homeImg.webp"
-          alt=""
+          src="/img/homeImg.jpeg"
+          alt="Image pour la home page pour mettre en avant un travail pro et artisanal"
+          @error="replaceUrl"
         />
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+function replaceUrl(e) {
+  e.target.src = "https://via.placeholder.com/720x580/EEEEEE";
+}
+
+</script>
 
 <style lang="scss" scoped></style>

@@ -24,6 +24,9 @@
                 :src="image.src"
                 alt=""
                 class="h-full w-full object-cover object-center"
+                @error="(e) => {
+                replaceUrl(e, image.id);
+              }"
               />
             </span>
             <span
@@ -51,11 +54,16 @@
             :src="image.src"
             :alt="image.alt"
             class="h-full w-full object-cover object-center sm:rounded-lg"
+            @error="
+              (e) => {
+                replaceUrl(e, image.id);
+              }
+            "
           />
         </TabPanel>
       </TabPanels>
     </TabGroup>
-    <div name="desc" class="mx-auto flex flex-col items-center">
+    <div name="txts" class="mx-auto flex flex-col items-center">
       <p
         v-for="item in Txts[router.currentRoute.value.params.view][language]
           .desc"
@@ -79,6 +87,10 @@ import Txts from "./servicesPages/importsTxt.js";
 
 const view = ref(Array);
 const language = ref("fr");
+function replaceUrl(e, index) {
+  let randomColor = Math.floor((index / 10) * 16777215).toString(16);
+  e.target.src = "https://via.placeholder.com/720x406/" + randomColor;
+}
 
 watch(
   () => router.currentRoute.value.params.view,
