@@ -85,8 +85,9 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/vue";
 import Contact from "./Contact.vue";
 import Txts from "./servicesPages/importsTxt.js";
 
-const view = ref(Array);
 const language = ref("fr");
+const metaDescription = document.querySelector("#desc");
+
 function replaceUrl(e, index) {
   let randomColor = Math.floor((index / 10) * 16777215).toString(16);
   e.target.src = "https://via.placeholder.com/720x406/" + randomColor;
@@ -95,12 +96,15 @@ function replaceUrl(e, index) {
 watch(
   () => router.currentRoute.value.params.view,
   () => {
-    view.value = router.currentRoute.value.params.view;
+    if (router.currentRoute.value.name === "Services") {
+      metaDescription.content =
+        Txts[router.currentRoute.value.params.view][language.value].metaContent;
+    }
   },
 );
 onMounted(async () => {
-  view.value = router.currentRoute.value.params.view;
-  console.log(Txts[view.value][language.value]);
+  metaDescription.content =
+    Txts[router.currentRoute.value.params.view][language.value].metaContent;
 });
 </script>
 

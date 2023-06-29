@@ -49,11 +49,17 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
 
 function replaceUrl(e) {
   e.target.src = "https://via.placeholder.com/720x580/EEEEEE";
 }
 
+onMounted(async () => {
+  const metaDescription = document.querySelector("#desc");
+  metaDescription.content =
+    "Bienvenue sur la page d'accueil de ADP, votre spécialiste en adhésif, décoration et publicité.";
+});
 </script>
 
 <style lang="scss" scoped></style>
