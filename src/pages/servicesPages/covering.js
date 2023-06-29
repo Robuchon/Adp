@@ -2,36 +2,37 @@ const fr = {
   title: "Service de Covering de Véhicules",
   subTitle:
     "Transformez votre véhicule en un outil de publicité percutant et laissez-moi donner vie à votre vision avec mon service de covering de véhicules. Fort de plus de 20 ans d'expérience, je suis fier de mettre mon expertise à votre service. Voici pourquoi vous pouvez compter sur moi",
+    metaContent: "Transformez votre véhicule en un outil de publicité percutant et laissez-moi donner vie à votre vision",
   images: [
     {
       id: 1,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587237.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     {
       id: 2,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587238.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     {
       id: 3,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587237.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     {
       id: 4,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587238.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
 
     {
       id: 5,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587237.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     // More images...

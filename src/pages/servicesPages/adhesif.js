@@ -2,41 +2,42 @@ const fr = {
   title: "Service d'Adhésifs",
   subTitle:
     "Laissez-moi donner vie à votre vision avec mon service d'adhésifs sur mesure. Fort de plus de 20 ans d'expérience en tant que professionnel indépendant, je mets mon expertise à votre service. Voici pourquoi vous pouvez compter sur moi",
+  metaContent: "Laissez-moi donner vie à votre vision avec mon service d'adhésifs sur mesure",
   images: [
     {
       id: 1,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587237.jpg",
+      src: "prout",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     {
       id: 2,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587238.jpg",
+      src: "prout",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     {
       id: 3,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587237.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     {
       id: 4,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587238.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     {
       id: 5,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587237.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
     {
       id: 6,
       name: "Angled view",
-      src: "https://www.inaudipub.fr/s/cc_images/cache_2486587238.jpg",
+      src: "",
       alt: "Angled front view with bag zipped and handles upright.",
     },
 
