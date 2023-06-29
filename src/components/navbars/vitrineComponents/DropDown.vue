@@ -27,11 +27,11 @@ const props = defineProps(["dataNav"]);
 const emit = defineEmits(["action"]);
 
 function goTo(value) {
+  emit("action");
   router.push({
     name: value.goto,
     params: { view: value.param },
   });
-  emit("action");
 }
 </script>
 
